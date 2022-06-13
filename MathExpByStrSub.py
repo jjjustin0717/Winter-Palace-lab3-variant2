@@ -25,7 +25,7 @@ op_levels = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 0}
 
 
 def negative_test(f: Callable[..., Any]) -> Callable[..., Any]:
-    def test(*args: Any, **kwargs: Any) -> T:
+    def test(*args: Any, **kwargs: Any) -> Any:
         try:
             return f(*args, **kwargs)
         except ValueError:
