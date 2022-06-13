@@ -14,7 +14,7 @@
     Part of our code reference the code that already exists.
     We didn't remake the wheels.
 """
-from typing import Union, TypeVar
+from typing import Any, Union, TypeVar, Callable
 from math import sin, cos, tan, log, pow
 
 # Define symbol precedence
@@ -23,7 +23,8 @@ op_levels = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 0}
 
 T = TypeVar('T', bound=Union[int, float])
 
-def negative_test(f):
+
+def negative_test(f: Callable[..., Any]):
     def test(*args, **kwargs):
         try:
             return f(*args, **kwargs)
