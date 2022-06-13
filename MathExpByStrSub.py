@@ -120,7 +120,7 @@ class MathExpByStrSub(object):
             self.rpn_seq.append(op_stack.pop(-1))
 
     """
-        Calculate the result based on the generated rpn sequence 
+        Calculate the result based on the generated rpn sequence
     """
 
     @negative_test
