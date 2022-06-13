@@ -39,8 +39,8 @@ class MathExpByStrSub(object):
 
     def to_rpn(self) -> None:
         """ Convert string formula to reverse polish notation(rpn_seq) """
-        num_flag = 0  # number flag
-        let_flag = 0  # letter flag
+        num_flag = 0  # Number flag
+        let_flag = 0  # Letter flag
         op_stack = list()
         math_sym = ''
         # Remove blank
@@ -48,8 +48,10 @@ class MathExpByStrSub(object):
 
         for index, tmp in enumerate(str_formula):
             if let_flag == 1:
-                # Get math symbols such as sin, cos function
-                # and pass it to math_sym
+                """
+                    Get math symbols such as sin, cos function
+                    and pass it to math_sym
+                """
                 if tmp not in operators:
                     math_sym += tmp
                     # Close this loop and start to read next tmp
