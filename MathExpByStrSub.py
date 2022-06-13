@@ -22,8 +22,8 @@ operators = ['+', '-', '*', '/', '(', ')', ',']
 op_levels = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 0}
 
 
-def negative_test(f: Callable[..., Any]):
-    def test(*args, **kwargs):
+def negative_test(f: Callable[..., Any]) -> Any:
+    def test(*args, **kwargs) -> Any:
         try:
             return f(*args, **kwargs)
         except ValueError:
@@ -124,7 +124,7 @@ class MathExpByStrSub(object):
     """
 
     @negative_test
-    def evaluate(self, **kwargs) -> float:
+    def evaluate(self, **kwargs: Any) -> Any:
         stack = list()  # type: List[Any]
         # **kwargs: Parameter Dict
         self.values = kwargs
