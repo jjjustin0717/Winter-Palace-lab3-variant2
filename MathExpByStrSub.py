@@ -14,10 +14,8 @@
     Part of our code reference the code that already exists.
     We didn't remake the wheels.
 """
-from typing import Any, List, Dict, TypeVar, Callable
+from typing import Any, List, Dict, Callable
 from math import sin, cos, tan, log, pow
-
-T = TypeVar('T')
 
 # Define symbol precedence
 operators = ['+', '-', '*', '/', '(', ')', ',']
@@ -125,7 +123,7 @@ class MathExpByStrSub(object):
     """
 
     @negative_test
-    def evaluate(self, **kwargs: Any) -> T:
+    def evaluate(self, **kwargs: Any) -> Any:
         stack = list()  # type: List[Any]
         # **kwargs: Parameter Dict
         self.values = kwargs
