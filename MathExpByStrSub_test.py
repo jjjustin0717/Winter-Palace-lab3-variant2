@@ -1,5 +1,4 @@
 import unittest
-from hypothesis import given, strategies
 
 from MathExpByStrSub import MathExpByStrSub
 
