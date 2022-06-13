@@ -177,10 +177,10 @@ class MathExpByStrSub(object):
                 f = self.values[i]
                 args_nums = f.__code__.co_argcount
 
-                dict = dict()
+                dictionary = dict()
                 for j in range(args_nums):
-                    dict[j] = stack.pop(-1)
-                v = f(*dict.values())
+                    dictionary[j] = stack.pop(-1)
+                v = f(*dictionary.values())
                 stack.append(v)
 
         return stack.pop(-1)
