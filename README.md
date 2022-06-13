@@ -41,21 +41,17 @@ Group members information as follows.
 
 ## Project structure
 
-- ...
-
 ## Changelog
-
-
 
 ---
 
 The third lab of CPO
 HDU-ID: 2123200XX
-Name: 
+Name:
 Date: 2022/06/06
 
 1.
 
 ## Design notes
 
-- ...
+
