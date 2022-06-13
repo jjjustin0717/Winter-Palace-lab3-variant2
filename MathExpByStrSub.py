@@ -125,7 +125,7 @@ class MathExpByStrSub(object):
 
     @negative_test
     def evaluate(self, **kwargs) -> float:
-        stack = list() # type: List[Any]
+        stack = list()  # type: List[Any]
         # **kwargs: Parameter Dict
         self.values = kwargs
         # Facilitate the entire sequence
