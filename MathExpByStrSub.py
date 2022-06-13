@@ -1,5 +1,6 @@
 """
-    1. Find in input string simple expressions (a, 1+2, f(1)), and replate it by its result.
+    1. Find in input string simple expressions (a, 1+2, f(1)),
+      and replate it by its result.
     2. Input language is a string like a + 2 - sin(-0.3)*(b - c).
     3. Should support user-specific functions by passing something like
       {"foo": lambda x: x*42 } or by named arguments.
@@ -10,7 +11,8 @@
     PS:
     About reverse polish notation, we reference the idea from
     https://www.jianshu.com/p/9b89703480e0
-    Part of our code reference the code that already exists. We didn't remake the wheels.
+    Part of our code reference the code that already exists.
+    We didn't remake the wheels.
 """
 
 from math import *
@@ -47,7 +49,8 @@ class MathExpByStrSub(object):
 
         for index, tmp in enumerate(str_formula):
             if let_flag == 1:
-                # Get math symbols such as sin, cos function and pass it to math_sym
+                # Get math symbols such as sin, cos function
+                # and pass it to math_sym
                 if tmp not in operators:
                     math_sym += tmp
                     # Close this loop and start to read next tmp
@@ -104,7 +107,8 @@ class MathExpByStrSub(object):
                 continue
 
             # Pop the higher level operator and add it to node
-            while len(op_stack) != 0 and op_levels[op_stack[-1]] >= op_levels[tmp]:
+            while len(op_stack) != 0 and \
+                    op_levels[op_stack[-1]] >= op_levels[tmp]:
                 self.rpn_seq.append(op_stack.pop(-1))
             op_stack.append(tmp)
 
@@ -173,10 +177,10 @@ class MathExpByStrSub(object):
                 f = self.values[i]
                 args_nums = f.__code__.co_argcount
 
-                dic = dict()
+                dict = dict()
                 for j in range(args_nums):
-                    dic[j] = stack.pop(-1)
-                v = f(*dic.values())
+                    dict[j] = stack.pop(-1)
+                v = f(*dict.values())
                 stack.append(v)
 
         return stack.pop(-1)
