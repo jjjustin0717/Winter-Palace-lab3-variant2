@@ -14,11 +14,11 @@
     Part of our code reference the code that already exists.
     We didn't remake the wheels.
 """
-from typing import Any, List, Dict, TypeVar, Callable, ParamSpec
+from typing import Any, List, Dict, TypeVar, Callable,\
+    ParamSpecArgs, ParamSpecKwargs
 from math import sin, cos, tan, log, pow
 
 T = TypeVar('T')
-P = ParamSpec('P')
 
 # Define symbol precedence
 operators = ['+', '-', '*', '/', '(', ')', ',']
@@ -26,7 +26,7 @@ op_levels = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 0}
 
 
 def negative_test(f: Callable[..., Any]) -> Callable[..., Any]:
-    def test(*args: P.args, **kwargs: P.kwargs) -> T:
+    def test(*args: ParamSpecArgs, **kwargs: ParamSpecKwargs) -> T:
         try:
             return f(*args, **kwargs)
         except ValueError:
@@ -126,7 +126,7 @@ class MathExpByStrSub(object):
     """
 
     @negative_test
-    def evaluate(self, **kwargs: P.kwargs) -> T:
+    def evaluate(self, **kwargs: ParamSpecKwargs) -> T:
         stack = list()  # type: List[Any]
         # **kwargs: Parameter Dict
         self.values = kwargs
