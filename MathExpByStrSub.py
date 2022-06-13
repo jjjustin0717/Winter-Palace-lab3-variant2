@@ -14,13 +14,14 @@
     Part of our code reference the code that already exists.
     We didn't remake the wheels.
 """
-
+from typing import Union, TypeVar
 from math import sin, cos, tan, log, pow
 
 # Define symbol precedence
 operators = ['+', '-', '*', '/', '(', ')', ',']
 op_levels = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 0}
 
+T = TypeVar('T', bound=Union[int, float])
 
 def negative_test(f):
     def test(*args, **kwargs):
@@ -33,12 +34,12 @@ def negative_test(f):
 
 
 class MathExpByStrSub(object):
-    def __init__(self, formula='0'):
+    def __init__(self, formula: str = '0') -> None:
         self.formula = formula
         self.rpn_seq = []  # rpn sequence
         self.values = dict()  # empty dictionary
 
-    def to_rpn(self):
+    def to_rpn(self) -> None:
         """ Convert string formula to reverse polish notation(rpn_seq) """
         num_flag = 0  # number flag
         let_flag = 0  # letter flag
@@ -124,7 +125,7 @@ class MathExpByStrSub(object):
     """
 
     @negative_test
-    def evaluate(self, **kwargs):
+    def evaluate(self, **kwargs) -> T:
         stack = list()
         # **kwargs: Parameter Dict
         self.values = kwargs
