@@ -15,7 +15,7 @@
     We didn't remake the wheels.
 """
 
-from math import *
+from math import sin, cos, tan, log, pow
 
 # Define symbol precedence
 operators = ['+', '-', '*', '/', '(', ')', ',']
