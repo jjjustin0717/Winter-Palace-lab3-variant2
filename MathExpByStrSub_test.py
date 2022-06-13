@@ -79,9 +79,14 @@ class TestMathExpByStrSub(unittest.TestCase):
         self.assertEqual(mathExp2.evaluate(), 2.0)
 
     def test_UserSpecificFunction(self) -> None:
-        mathExp = MathExpByStrSub('foo(x)+2+2*cos(0)/2-y')
+        mathExp = MathExpByStrSub('a+b-5*c')
         mathExp.to_rpn()
-        self.assertEqual(mathExp.evaluate(x=2, y=3, foo=lambda x: x*42), 84.0)
+        self.assertEqual(mathExp.evaluate(a=2, b=3, c=4), -15.0)
+
+        mathExp1 = MathExpByStrSub('foo(x)+2+2*cos(0)/2-y')
+        mathExp1.to_rpn()
+        self.assertEqual(mathExp1.evaluate(x=2, y=3, foo=lambda x: x*42), 84.0)
+
         mathExp2 = MathExpByStrSub('a + 2 - sin(0.3) * (b - c)')
         mathExp2.to_rpn()
         self.assertEqual(round(mathExp2.evaluate(a=10, b=20, c=30), 1), 15.0)
