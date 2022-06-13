@@ -14,8 +14,7 @@
     Part of our code reference the code that already exists.
     We didn't remake the wheels.
 """
-from typing import Any, List, Dict, TypeVar, Callable,\
-    ParamSpecArgs, ParamSpecKwargs
+from typing import Any, List, Dict, TypeVar, Callable
 from math import sin, cos, tan, log, pow
 
 T = TypeVar('T')
@@ -26,7 +25,7 @@ op_levels = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 0}
 
 
 def negative_test(f: Callable[..., Any]) -> Callable[..., Any]:
-    def test(*args: ParamSpecArgs, **kwargs: ParamSpecKwargs) -> T:
+    def test(*args: Any, **kwargs: Any) -> T:
         try:
             return f(*args, **kwargs)
         except ValueError:
@@ -126,7 +125,7 @@ class MathExpByStrSub(object):
     """
 
     @negative_test
-    def evaluate(self, **kwargs: ParamSpecKwargs) -> T:
+    def evaluate(self, **kwargs: Any) -> T:
         stack = list()  # type: List[Any]
         # **kwargs: Parameter Dict
         self.values = kwargs
