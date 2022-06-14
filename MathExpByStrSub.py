@@ -177,14 +177,14 @@ class MathExpByStrSub(object):
             elif len(i) == 1:
                 stack.append(self.values[i])
             else:
-                # the values before operate push into the stack
+                # The values before operate push into the stack
                 f = self.values[i]
-                # number of positional and keyword arguments of the function
+                # Number of positional and keyword arguments of the function
                 args_nums = f.__code__.co_argcount
                 dictionary = dict()
                 for j in range(args_nums):
                     dictionary[j] = stack.pop(-1)
                 v = f(*dictionary.values())
                 stack.append(v)
-        # the last element in stack is the final result
+        # The last element in stack is the final result
         return stack.pop(-1)
