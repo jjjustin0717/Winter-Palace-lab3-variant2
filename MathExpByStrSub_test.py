@@ -36,7 +36,6 @@ class TestMathExpByStrSub(unittest.TestCase):
         mathExp2 = MathExpByStrSub('8 + 4 + 6')
         mathExp2.to_rpn()
         self.assertEqual(mathExp2.evaluate(), 18.0)
-        print(mathExp.evaluate())
 
     def test_Subtract(self) -> None:
         mathExp = MathExpByStrSub('8*5-(10-7)')
