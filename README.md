@@ -41,8 +41,8 @@ Group members information as follows.
 
 ## Project structure
 
-- `MathExpByStrSub.py` -- Mathematical expression by string substitution.
-- `MathExpByStrSub_test.py` -- Develop unit tests.
+* `MathExpByStrSub.py` -- Mathematical expression by string substitution.
+* `MathExpByStrSub_test.py` -- Develop unit tests.
 
 ## Changelog
 
@@ -77,6 +77,6 @@ Date: 2022/06/13
 ## Design notes
 
 About reverse polish notation, we reference the idea from
-https://www.jianshu.com/p/9b89703480e0
+`https://www.jianshu.com/p/9b89703480e0`
 Part of our code reference the code that already exists.
 We didn't remake the wheels.
