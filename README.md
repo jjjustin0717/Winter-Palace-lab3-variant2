@@ -46,12 +46,20 @@ Group members information as follows.
 ---
 
 The third lab of CPO
-HDU-ID: 2123200XX
-Name:
-Date: 2022/06/06
+HDU-ID: 212320025
+Name: yuexin zuo
+Date: 2022/06/13
 
-1.
+1.complete main functions.(evaluate and to_rpn)
+2.still have some small problem to fix.
 
+The third lab of CPO
+HDU-ID: 212320025
+Name: yuexin zuo
+Date: 2022/06/14
+
+1.fix some problem.
+2.complete some detail such as type and annotate.
 ## Design notes
 
 
