@@ -179,7 +179,7 @@ class MathExpByStrSub(object):
             else:
                 # the values before operate push into the stack
                 f = self.values[i]
-                # The number of positional and keyword arguments of the function
+                # number of positional and keyword arguments of the function
                 args_nums = f.__code__.co_argcount
                 dictionary = dict()
                 for j in range(args_nums):
