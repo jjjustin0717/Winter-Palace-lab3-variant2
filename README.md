@@ -16,7 +16,7 @@ Variant 2:  Mathematical expression by string substitution
 
 * Find in input string simple expressions (a, 1+2, f(1)), and replate it by its result.
 
-* Input language is a sting like a + 2 - sin(-0.3)*(b - c).
+* Input language is a string like a + 2 - sin(-0.3)*(b - c).
 
 * Should support user-specific functions by passing something like
 
