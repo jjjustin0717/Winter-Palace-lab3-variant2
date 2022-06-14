@@ -19,6 +19,7 @@ from math import sin, cos, tan, log, pow
 
 # Define symbol precedence
 operators = ['+', '-', '*', '/', '(', ')', ',']
+# Define operator levels
 op_levels = {'+': 1, '-': 1, '*': 2, '/': 2, '(': 0}
 
 
@@ -35,6 +36,7 @@ class MathExpByStrSub(object):
     def __init__(self, formula: str = '0') -> None:
         self.formula = formula
         self.rpn_seq = []  # type: List[Any]
+        # dict() function is used to calculate the ordered rpn sequence
         self.values = dict()  # type: Dict[Any, Any]
 
     def to_rpn(self) -> None:
@@ -97,11 +99,11 @@ class MathExpByStrSub(object):
                 op_stack.append(tmp)
                 continue
 
-            # ')' must match '(' , so '(' must be found
+            # ')' need to match '(' , so '(' must be found
             if tmp == ')':
                 while op_stack[-1] != '(':
                     self.rpn_seq.append(op_stack.pop(-1))
-                # Pop (
+                # Pop '('
                 op_stack.pop(-1)
                 if (len(op_stack) != 0) and (op_stack[-1] not in operators):
                     self.rpn_seq.append(op_stack.pop(-1))
@@ -175,13 +177,14 @@ class MathExpByStrSub(object):
             elif len(i) == 1:
                 stack.append(self.values[i])
             else:
+                # the values before operate push into the stack
                 f = self.values[i]
+                # co_argcount: The number of positional and keyword arguments of the function
                 args_nums = f.__code__.co_argcount
-
                 dictionary = dict()
                 for j in range(args_nums):
                     dictionary[j] = stack.pop(-1)
                 v = f(*dictionary.values())
                 stack.append(v)
-
+        # the last element in stack is the final result
         return stack.pop(-1)
