@@ -41,26 +41,42 @@ Group members information as follows.
 
 ## Project structure
 
+- `MathExpByStrSub.py` -- Mathematical expression by string substitution.
+- `MathExpByStrSub_test.py` -- Develop unit tests.
+
 ## Changelog
+
+The third lab of CPO
+HDU-ID: 212320024
+Name: Chen Chongzhong
+Date: 2022/06/14
+
+1.Fix some problems.
+2.Complete tunit tests.
 
 ---
 
 The third lab of CPO
 HDU-ID: 212320025
-Name: yuexin zuo
-Date: 2022/06/13
+Name: Zuo Yuexin
+Date: 2022/06/14
 
-1.complete main functions.(evaluate and to_rpn)
-2.still have some small problem to fix.
+1.Fix some problems.
+2.Complete some detail such as type and annotate.
+
+---
 
 The third lab of CPO
 HDU-ID: 212320025
-Name: yuexin zuo
-Date: 2022/06/14
+Name: Zuo Yuexin
+Date: 2022/06/13
 
-1.fix some problem.
-2.complete some detail such as type and annotate.
+1.Complete main functions (evaluate and to_rpn).
+2.Still have some small problem to fix.
 
 ## Design notes
 
-
+About reverse polish notation, we reference the idea from
+https://www.jianshu.com/p/9b89703480e0
+Part of our code reference the code that already exists.
+We didn't remake the wheels.
