@@ -3,6 +3,8 @@ import unittest
 from hypothesis import given
 import hypothesis.strategies as st
 
+from typing import List
+
 from MathExpByStrSub import MathExpByStrSub
 
 
@@ -94,7 +96,7 @@ class TestMathExpByStrSub(unittest.TestCase):
         mathExp2.to_rpn()
         self.assertEqual(round(mathExp2.evaluate(a=10, b=20, c=30), 1), 15.0)
 
-    def test_What_happens1(self):
+    def test_What_happens1(self) -> None:
         try:
             mathExp = MathExpByStrSub('a + 2 - sin(0.3) * (b - c) / 0')
             mathExp.to_rpn()
@@ -102,7 +104,7 @@ class TestMathExpByStrSub(unittest.TestCase):
         except ZeroDivisionError:
             print(repr(ZeroDivisionError))
 
-    def test_What_happens2(self):
+    def test_What_happens2(self) -> None:
         try:
             mathExp = MathExpByStrSub('a + 2 - log(0,0) * (b - c)')
             mathExp.to_rpn()
@@ -111,7 +113,7 @@ class TestMathExpByStrSub(unittest.TestCase):
             print(repr(ValueError))
 
     @given(st.integers())
-    def test_Property_based(self, a):
+    def test_Property_based(self, a: int) -> None:
         mathExp = MathExpByStrSub('a-a+(a+a)')
         mathExp.to_rpn()
         self.assertEqual(mathExp.evaluate(a=a), 2 * a)
@@ -119,7 +121,8 @@ class TestMathExpByStrSub(unittest.TestCase):
     @given(a=st.lists(st.integers()),
            b=st.lists(st.integers()),
            c=st.lists(st.integers()))
-    def test_monoid_identity(self, a, b, c) -> None:
+    def test_monoid_identity(self, a: List[int],
+                             b: List[int], c: List[int]) -> None:
         """
         Associativity
         For all a, b and c in S,
