@@ -49,6 +49,15 @@ Group members information as follows.
 The third lab of CPO
 HDU-ID: 212320024
 Name: Chen Chongzhong
+Date: 2022/06/20
+
+1.Add PBT test.
+
+---
+
+The third lab of CPO
+HDU-ID: 212320024
+Name: Chen Chongzhong
 Date: 2022/06/14
 
 1.Fix some problems.
